@@ -47,6 +47,16 @@
       margin-left: 1%;
       width: 49%;
     }
+
+    .left {
+      float: left;
+      width: 50%;
+    }
+
+    .right { 
+      float: left;
+      width: 50%;
+    }
   </style>
 </head>
 <body onload="init();">
@@ -59,14 +69,20 @@
       <div class="editor">
         <h2>Source Edit</h2>
         <div id="json" class="kbd">{}</div>
-        <button id="save">Save</button>
+        <div class="left">
+          <p>Save or Download JSON</p>
+          <button id="save">Save</button>
+          <a href='data:text/json,{"hi": "world"}' download="data.json" id="download">Download (Right-click, Save-As)</a>
+        </div>
+        <div class="right">
+          <p>Upload new file</p>
+          <form method="get" id="fileForm" enctype="multipart/form-data">
+            <input type="file" name="fileUpload" id="fileUpload" />
+            <input type="submit" value="Open file" />
+          </form>
+        </div>  
       </div>
     </div>
-    
-    
-  
   </section>
-
-
 </body>
 </html>
